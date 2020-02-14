@@ -1,0 +1,66 @@
+<div>
+    <h2>Product&nbsp;:&nbsp;query</h2>
+    <div>
+      <table mat-table [dataSource]="products">
+        
+        <ng-container matColumnDef="radio">
+          <th mat-header-cell *matHeaderCellDef>&nbsp;</th>
+          <td mat-cell *matCellDef="let product; let i = index; ">
+            <mat-radio-button name="product._id" value="product._id" (change)="onSelect(product);"  checked="{{i==0}}" ></mat-radio-button>           
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="serialno">
+          <th mat-header-cell *matHeaderCellDef>#</th>
+          <td mat-cell *matCellDef="let product; let i = index;">&nbsp;{{i+1}}&nbsp;&nbsp;</td>
+        </ng-container>
+
+        <ng-container matColumnDef="_id">
+          <th mat-header-cell *matHeaderCellDef>_id: ObjectId</th>
+          <td mat-cell *matCellDef="let product">
+            <p>{{ product._id }}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="field1">
+          <th mat-header-cell *matHeaderCellDef>field1: string</th>
+          <td mat-cell *matCellDef="let product">
+            <p>{{ product.field1 }}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="field2">
+          <th mat-header-cell *matHeaderCellDef>field2: list</th>
+          <td mat-cell *matCellDef="let product">            
+            <p>item1 : {{ product.field2['item1'] }}</p>
+            <p>item2 : {{ product.field2['item2'] }}</p>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="field3">
+          <th mat-header-cell *matHeaderCellDef>field3: datetime</th>
+          <td mat-cell *matCellDef="let product">
+            <p>{{ product.field3 }}</p>
+          </td>
+        </ng-container>  
+        
+        <ng-container matColumnDef="field4">
+          <th mat-header-cell *matHeaderCellDef>field4: datetime</th>
+          <td mat-cell *matCellDef="let product">
+            <p>{{ product.field4 }}</p>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayColumn"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+      </table>          
+    </div>
+    
+    <br /><mat-divider></mat-divider><br />
+    <div>
+      <a (click)="goInsert('product');">insert</a>&#124;
+      <a (click)="goMaintain('product','duplicate');">duplicate</a>&#124;
+      <a (click)="goMaintain('product','edit');">edit</a>&#124;
+      <a (click)="goMaintain('product','detail');">detail/delete</a>
+    </div>
+</div>   

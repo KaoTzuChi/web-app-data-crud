@@ -1,0 +1,11 @@
+<div id="apiMessageBlock">
+  <div *ngIf="apimessageService.messages.length">
+    <h4>API access messages:</h4>
+    <a (click)="apimessageService.clear()">clear</a>
+
+    <br />
+    <ol>
+      <li *ngFor='let message of apimessageService.messages'> {{message}} </li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<div>
+    <h2>Product&nbsp;:&nbsp;detail</h2>
+    <div *ngIf="product">
+        <mat-form-field>
+          <mat-placeholder>id</mat-placeholder>
+          <input matInput [(ngModel)]="product._id" [disabled]="true" />
+        </mat-form-field>
+  
+        <mat-form-field>
+          <mat-placeholder>field1: string</mat-placeholder>
+          <input matInput [(ngModel)]="product.field1" [disabled]="true" />
+        </mat-form-field>
+        
+        <mat-form-field>
+          <mat-placeholder>field2.item1: string</mat-placeholder>
+          <input matInput [(ngModel)]="product.field2['item1']" [disabled]="true" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-placeholder>field2.item2: string</mat-placeholder>
+          <input matInput [(ngModel)]="product.field2['item2']" [disabled]="true" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-placeholder>field3: datetime</mat-placeholder>
+          <input matInput [(ngModel)]="product.field3" [disabled]="true" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-placeholder>field4: decimal</mat-placeholder>
+          <input matInput [(ngModel)]="product.field4" [disabled]="true" />
+        </mat-form-field>
+  
+      </div>
+      <br /><mat-divider></mat-divider><br />
+    <div>
+      <a (click)="deleteProduct();">delete</a>&#124;
+      <a (click)="goBack();">back</a>
+    </div>
+</div>   
+
