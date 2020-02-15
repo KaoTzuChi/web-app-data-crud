@@ -69,7 +69,8 @@ services:
       ports:
         - "5555:6666"
       volumes:
-        - ./webserver/nginx.conf:/etc/nginx/conf.d/nginx.conf
+        - ./webserver/nginx-frontend.conf:/etc/nginx/conf.d/nginx-frontend.conf
+        - ./webserver/nginx-backend.conf:/etc/nginx/conf.d/nginx-backend.conf
       networks:
         - networktier-app2
       depends_on:
