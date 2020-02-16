@@ -26,6 +26,7 @@ export class ProductInsertComponent implements OnInit {
     this.product.field1 = '';
     this.product.field2 = {'item1':'', 'item2':''};
     this.product.field3 = this.jstoday.toString();
+    this.product.field4 = 0.00;
   }
 
   ngOnInit() {}

@@ -68,6 +68,7 @@ services:
       container_name: webapp2-webserver
       ports:
         - "5555:6666"
+        - "7777:8888"
       volumes:
         - ./webserver/nginx-frontend.conf:/etc/nginx/conf.d/nginx-frontend.conf
         - ./webserver/nginx-backend.conf:/etc/nginx/conf.d/nginx-backend.conf

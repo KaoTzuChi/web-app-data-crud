@@ -19,7 +19,7 @@ def read_mycollection_all(request):
             formated_doc= models.myModel( 
                 dbutilities.getIdString( doc, '_id'),
                 dbutilities.getFieldString( doc, 'field1'),
-                dbutilities.getFieldList( doc, 'field2' ),
+                dbutilities.getFieldDict( doc, 'field2', ['item1','item2'] ),
                 dbutilities.getFieldDatetime( doc, 'field3'),
                 dbutilities.getFieldDecimal( doc, 'field4')
             )
@@ -42,7 +42,7 @@ def read_mycollection_byid(request, id):
             formated_doc= models.myModel( 
                 dbutilities.getIdString( doc, '_id'),
                 dbutilities.getFieldString( doc, 'field1'),
-                dbutilities.getFieldList( doc, 'field2' ),
+                dbutilities.getFieldDict( doc, 'field2', ['item1','item2'] ),
                 dbutilities.getFieldDatetime( doc, 'field3'),
                 dbutilities.getFieldDecimal( doc, 'field4')
             )       
@@ -58,7 +58,7 @@ request.data = {
     "field1" : "test value 1", 
     "field2" : {"item1":"test value 2", "item2":"test value 3" },
     "field3" : "2020-01-01T00:00:00Z",
-    "field4: : 2.34
+    "field4" : 2.34
 }
 '''
 @api_view(['POST'])
@@ -81,7 +81,7 @@ def create_doc_in_mycollection_return_newone(request):
             formated_doc= models.myModel( 
                 dbutilities.getIdString( newdoc, '_id'),
                 dbutilities.getFieldString( newdoc, 'field1'),
-                dbutilities.getFieldList( newdoc, 'field2' ),
+                dbutilities.getFieldDict( newdoc, 'field2', ['item1','item2'] ),
                 dbutilities.getFieldDatetime( newdoc, 'field3'),
                 dbutilities.getFieldDecimal( newdoc, 'field4')
             )       
@@ -94,11 +94,11 @@ def create_doc_in_mycollection_return_newone(request):
 '''
 e.g. http://localhost:9900/replace_doc_in_mycollection_return_newone/
 request.data = { 
-    "_id": "5e46533fa8a7194456fbe99b", 
+    "_id": "5e480477d7aa78d1123702b4", 
     "field1": "test value 5", 
     "field2":{"item1":"test value 6", "item2":"test value 7" },
     "field3": "2020-08-01T00:00:00Z",
-    "field4: : 4.56
+    "field4": 4.56
 }
 '''
 @api_view(['POST'])
@@ -121,7 +121,7 @@ def replace_doc_in_mycollection_return_newone(request):
             formated_doc= models.myModel( 
                 dbutilities.getIdString( newdoc, '_id'),
                 dbutilities.getFieldString( newdoc, 'field1'),
-                dbutilities.getFieldList( newdoc, 'field2' ),
+                dbutilities.getFieldDict( newdoc, 'field2', ['item1','item2'] ),
                 dbutilities.getFieldDatetime( newdoc, 'field3'),
                 dbutilities.getFieldDecimal( newdoc, 'field4')
             )       
