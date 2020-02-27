@@ -25,7 +25,7 @@ export class ProductQueryComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
-  }
+  }z
 
   getProducts(): void {
     this.productQueryService.getProducts()
