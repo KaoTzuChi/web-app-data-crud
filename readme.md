@@ -1,10 +1,10 @@
-# Web app data CRUD: angular, python(django rest) and mongodb in docker
+# Web app data CRUD: Angular, Python(Django) and MongoDB in Docker
 
 ## Version
-- node 12.13.0
-- angular/cli 8.3.14
+- Node 12.13.0
+- Angular/cli 8.3.14
 - Python 3.7.4
-- django 2.2.10
+- Django 2.2.10
 - djangorestframework 3.10.1
 - pymongo 3.8.0
 - MongoDB 4.2.0
